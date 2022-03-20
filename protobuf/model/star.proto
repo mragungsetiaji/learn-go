@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "./";
+package model;
+
+enum StarGender {
+    UNDEFINED = 0;
+    MALE = 1;
+    FEMALE = 2;
+}
+
+message Star {
+    string id = 1;
+    string name = 2;
+    StarGender gender = 3;
+}
+
+message StarList {
+    repeated Star list = 1;
+}

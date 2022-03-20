@@ -1,0 +1,13 @@
+syntax = "proto3";
+option go_package = "./";
+package model;
+
+message Movie {
+    string id = 1;
+    string title = 2;
+    int32 year = 3;
+}
+
+message MovieListByStar {
+    map<string, Movie> List = 1;
+}
