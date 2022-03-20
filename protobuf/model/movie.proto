@@ -8,6 +8,10 @@ message Movie {
     int32 year = 3;
 }
 
+message MovieList {
+    repeated Movie movies = 1;
+}
+
 message MovieListByStar {
-    map<string, Movie> List = 1;
+    map<string, MovieList> List = 1;
 }

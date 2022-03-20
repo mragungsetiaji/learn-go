@@ -53,5 +53,30 @@ func main() {
 	}
 	fmt.Printf("# ==== As Proto Object\n       %#v \n", protoObject)
 
+	// Add Star to Movie
+	var movie2 = &model.Movie{
+		Id: "m2",
+		Title: "Breaking Dawn",
+		Year: 2011,
+	}
+
+	var movieList1 = &model.MovieList{
+		Movies: []*model.Movie{
+			movie1, movie2,
+		},
+	}
+
+	var movieListByStar = &model.MovieListByStar{
+		List: map[string]*model.MovieList{
+			star1.Id: movieList1, 
+		},
+	}
+
+	// =========== original
+	fmt.Printf("# ==== Original\n       %#v \n", movieListByStar)
+
+	// =========== as string
+	fmt.Printf("# ==== As String\n       %v \n", movieListByStar.String())
+
 }
 
